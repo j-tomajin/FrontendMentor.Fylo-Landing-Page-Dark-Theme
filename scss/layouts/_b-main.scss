@@ -1,0 +1,41 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+main {
+    width: min(100%, f.rem(1440));
+    margin-inline: auto;
+    text-align: center;
+
+    .img {
+        margin-bottom: f.rem(32);
+    }
+
+    article {
+        background-color: var(--d-blue-main-bg);
+        width: 100%;
+        color: var(--white);
+
+        h1 {
+            font-size: f.rem(26);
+        }
+
+        p {
+            padding-inline: f.rem(16);
+            margin-top: f.rem(80);
+        }
+
+        a {
+            color: var(--white);
+            background-color: var(--cyan);
+            width: 70%;
+            margin-inline: auto;
+            padding: f.rem(16);
+            border-radius: 50px;
+        }
+    }
+
+    background-color: var(--d-blue);
+    background-image: url(../images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
