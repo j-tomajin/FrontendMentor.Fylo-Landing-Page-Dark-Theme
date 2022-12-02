@@ -1,0 +1,47 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+/* POSITIONS */
+
+
+/* MAIN */
+.main-position {
+    article {
+        position: relative;
+
+        h1 {
+            top: -50px;
+            position: absolute;
+        }
+    }
+}
+
+/* SECTION TESTIMONIALS */
+.section-testimonials-position {
+    .testimonials {
+        .testimonial-card:first-child {
+            position: relative;
+
+            & > img {
+                width: 50px;
+                position: absolute;
+                top: -41px;
+                left: 10px;
+            }
+        }
+    }
+}
+
+/* SECTION EARLY ACCESS */
+.early-access-position {
+    form {
+        .email-box {
+            position: relative;
+
+            .error {
+                position: absolute;
+                left: 23px;
+                bottom: -21px;
+            }
+        }
+    }
+}
