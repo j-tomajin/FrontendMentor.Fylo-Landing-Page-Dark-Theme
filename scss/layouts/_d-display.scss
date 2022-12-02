@@ -1,0 +1,112 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+/* HEADER */
+.header-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        ul {
+            li {
+                display: inline-block;
+
+                &:not(:last-child) {
+                    margin-right: f.rem(22);
+                }
+            }
+        }
+    }
+}
+
+/* MAIN */
+.main-display {
+    /* REMOVE LATER */
+    /* display: none; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: f.rem(44);
+
+    article {
+        display: grid;
+        gap: f.rem(28);
+    }
+}
+
+/* SECTION FEATURES DISPLAY */
+.section-features-display {
+   display: grid;
+   place-items: center;
+   grid-template-columns: 1fr;
+   gap: f.rem(64);
+}
+
+/* SECTION TESTIMONIALS */
+.section-testimonials-display {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: f.rem(48);
+    grid-template-areas: 
+        'img'
+        'article'
+        'testimonials';
+
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(16);
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: f.rem(10);
+        }
+    }
+
+    .testimonials {
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr;
+        gap: f.rem(32);
+
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(32);
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: f.rem(16);
+            }
+        }
+    }
+
+
+    /* GRID AREAS */
+    .img {
+        grid-area: img;
+    }
+
+    article {
+        grid-area: article;
+    }
+    .testimonials {
+        grid-area: testimonials;
+    }
+}
+
+/* SECTION EARLY ACCCESS */
+.early-access-display {
+    form {
+        display: grid;
+        gap: f.rem(30);
+        grid-template-columns: 1fr;
+    }
+}
