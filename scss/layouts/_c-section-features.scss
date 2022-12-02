@@ -1,0 +1,29 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+section.features {
+    width: min(100%, f.rem(1440));
+    margin-inline: auto;
+    padding-block: f.rem(100);
+
+    article {
+        width: min(100%, f.rem(430));
+        text-align: center;
+
+        img {
+            margin-inline: auto;
+            width: 55px;
+            margin-bottom: f.rem(32);
+        }
+
+        h2 {
+            color: var(--white);
+            margin-bottom: f.rem(20);
+        }
+
+        p {
+            color: var(--l-gray);
+            /* padding-inline: f.rem(); */
+        }
+    }
+}
