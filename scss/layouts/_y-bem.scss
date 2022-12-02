@@ -1,0 +1,24 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+@use '../utils/fonts' as font;
+
+.raleway {
+    font-family: font.$raleway;
+    font-weight: 400;
+}
+
+h1, h2, h3, 
+h4, h5, .raleway-bold {
+    font-family: font.$raleway;
+    font-weight: 700;
+}
+
+p, .open-sans {
+    font-family: font.$open-sans;
+    font-weight: 400;
+}
+
+.open-sans-bold {
+    font-family: font.$open-sans;
+    font-weight: 700;
+}
