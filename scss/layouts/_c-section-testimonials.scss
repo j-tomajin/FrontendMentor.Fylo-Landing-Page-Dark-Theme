@@ -1,0 +1,51 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+section.testimonials {
+    width: min(90%, f.rem(1000));
+    margin-inline: auto;
+
+    article {
+        h3 {
+            color: var(--white);
+        }
+        p {
+            color: var(--l-gray);
+        }
+        a {
+            color: var(--cyan);
+        }
+    }
+
+    .testimonials {
+        padding-block: f.rem(100);
+
+        .testimonial-card {
+            width: min(90%, f.rem(400));
+            background-color: var(--d-blue-testimonial);
+            border-radius: f.rem(5);
+            padding: f.rem(28);
+
+            & > p {
+                color: var(--l-gray);
+            }
+
+            .user {
+                img {
+                    width: 40px;
+                    border-radius: 50%;
+                }
+
+                .user-info {
+                    h4 {
+                        color: var(--white);
+                    }
+                    p {
+                        color: var(--l-gray);
+                        font-size: f.rem(12);
+                    }
+                }
+            }
+        }
+    }
+}
