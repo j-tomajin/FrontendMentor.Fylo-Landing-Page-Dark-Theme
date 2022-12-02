@@ -1,0 +1,52 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+section.early-access {
+    width: min(90%, f.rem(860));
+    margin-inline: auto;
+    background-color: var(--d-blue);
+    border-radius: f.rem(8);
+    padding: f.rem(26);
+
+    h5, p {
+        text-align: center;
+    }
+
+    h5 {
+        font-size: f.rem(20);
+        color: var(--white);
+        margin-bottom: f.rem(25);
+    }
+    p {
+        color: var(--l-gray);
+        font-size: f.rem(14);
+        margin-bottom: f.rem(32);
+    }
+    form {
+        .email-box {
+            input {
+                width: 100%;
+                padding: f.rem(22);
+                border-radius: 50px;
+                outline: none;
+                border: none;
+
+                &::placeholder {
+                    color: var(--l-gray);
+                }
+            }
+
+            .error {
+                color: var(--l-red);
+            }
+        }
+        button {
+            background-image: linear-gradient(to right, var(--cyan), var(--blue));
+            width: 100%;
+            padding: f.rem(16);
+            border-radius: 50px;
+            color: var(--white);
+            font-size: f.rem(15);
+        }
+    }
+}
