@@ -1,0 +1,18 @@
+:root {
+    /* Primary */
+    --d-blue: hsl(217, 28%, 15%);
+    --d-blue-main-bg: hsl(218, 28%, 13%);
+    --d-blue-footer: hsl(216, 53%, 9%);
+    --d-blue-testimonial: hsl(219, 30%, 18%);
+
+    /* Accent */
+    --cyan: hsl(176, 68%, 64%);
+    --blue: hsl(198, 60%, 50%);
+    --l-red: hsl(0, 100%, 63%);
+
+    --button-color: linear-gradient(to right, --cyan, --blue);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --l-gray: hsl(0, 0%, 80%);
+}
