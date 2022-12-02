@@ -1,0 +1,17 @@
+@use '../utils/functions' as f;
+@use '../utils/breakpoints' as bp;
+
+footer {
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+.attribution { 
+    display: none;
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
