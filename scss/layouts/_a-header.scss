@@ -1,0 +1,24 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+header {
+    width: min(100%, f.rem(1440));
+    margin-inline: auto;
+    padding: f.rem(22) f.rem(22) f.rem(50);
+    background-color: var(--d-blue);
+
+    .logo {
+        width: f.rem(74);
+    }
+    
+    nav {
+        ul {
+            li {
+                a {
+                    color: var(--white);
+                    font-size: f.rem(14);
+                }
+            }
+        }
+    }
+}
