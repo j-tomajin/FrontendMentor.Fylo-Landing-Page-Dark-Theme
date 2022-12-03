@@ -5,23 +5,28 @@ main {
     width: min(100%, f.rem(1440));
     margin-inline: auto;
     text-align: center;
+    background-color: var(--d-blue);
+    
+
 
     .img {
         margin-bottom: f.rem(32);
     }
 
     article {
+        /* padding-block: f.rem(32); */
         background-color: var(--d-blue-main-bg);
         width: 100%;
         color: var(--white);
 
         h1 {
             font-size: f.rem(26);
+            /* transform: translateY(-50px); */
         }
 
         p {
             padding-inline: f.rem(16);
-            margin-top: f.rem(80);
+            /* margin-top: f.rem(80); */
         }
 
         a {
@@ -33,9 +38,4 @@ main {
             border-radius: 50px;
         }
     }
-
-    background-color: var(--d-blue);
-    background-image: url(../images/bg-curvy-mobile.svg);
-    background-repeat: no-repeat;
-    background-position: center;
 }
