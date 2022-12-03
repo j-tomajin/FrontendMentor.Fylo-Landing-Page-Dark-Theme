@@ -182,6 +182,9 @@ main article a {
   main article h1 {
     font-size: 2.375rem;
   }
+  main article a {
+    width: 35%;
+  }
 }
 @media (min-width: 57.5em) and (min-width: 90em) {
   main article p {
