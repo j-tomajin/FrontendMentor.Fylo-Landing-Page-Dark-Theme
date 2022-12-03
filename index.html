@@ -35,6 +35,13 @@
 
   <!-- MAIN -->
   <main class="main-display main-position">
+    <div class="bg">
+      <picture>
+        <source media="(min-width: 400px)" srcset="../images/bg-curvy-desktop.svg">
+        <img src="../images/bg-curvy-mobile.svg" alt="">
+      </picture>
+    </div>
+
     <div class="img">
       <img src="./images/illustration-intro.png" alt="illustration">
     </div>
@@ -139,50 +146,84 @@
     </div>
   </section>
 
-  <!-- SECTION EARLY ACCESS -->
-  <section class="early-access early-access-display early-access-position">
-    <h5>Get early access today</h5>
-    <p>
-      It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.
-    </p>
-    <form action="#" id="form">
-      <div class="email-box">
-        <input type="text" name="text" id="email" placeholder="email@example.com">
-        <div class="error"></div>
+  <!-- FOOTER -->
+  <footer class="footer-display footer-position">  
+    <!-- SECTION EARLY ACCESS -->
+    <section class="early-access early-access-display early-access-position">
+      <h5>Get early access today</h5>
+      <p>
+        It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.
+      </p>
+      <form action="#" id="form">
+        <div class="email-box">
+          <input type="text" name="text" id="email" placeholder="email@example.com">
+          <div class="error"></div>
+        </div>
+        <button type="submit" class="raleway-bold">Get Started For Free</button>
+      </form>
+    </section>
+
+    <!-- Footer Container -->
+    <div class="footer-container">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="fylo-logo">
       </div>
-      <button type="submit" class="raleway-bold">Get Started For Free</button>
-    </form>
-  </section>
-  
+      <!-- CONTACTS -->
+      <div class="fylo-contacts open-sans">
+        <div class="location">
+          <img src="./images/icon-location.svg" alt="location-logo" aria-hidden="true">
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </span>
+        </div>
+        <div class="contact">
+          <div>
+            <img src="./images/icon-phone.svg" alt="telephone-icon" aria-hidden="true">
+            <span>
+              +1-543-123-4567
+            </span>
+          </div>
+          <div>
+            <img src="./images/icon-email.svg" alt="email-logo" aria-hidden="true">
+            <span>
+              example@fylo.com
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- FOOTER NAV -->
+      <div class="footer-nav">
+        <nav class="open-sans">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
 
-  
+      <!-- SOCIALS -->
+      <div class="socials">
+        <a href="#" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
 
-  <!-- 
-  
 
-  
 
-  
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-  dolore magna aliqua
-
-  +1-543-123-4567
-  example@fylo.com
-
-  About Us
-  Jobs
-  Press
-  Blog
-
-  Contact Us
-  Terms
-  Privacy -->
-
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+    <!-- ATTRIBUTION -->
+    <p class="attribution" class="open-sans">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="raleway-bold">Frontend Mentor</a>. 
+      Coded by <a href="#" class="raleway-bold">Jeck</a>.
     </p>
   </footer>
 </body>
