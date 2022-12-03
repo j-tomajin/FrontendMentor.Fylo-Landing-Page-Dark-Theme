@@ -33,9 +33,9 @@ const emailValidation = () => {
     const emailValue = email.value.trim();
 
     if(emailValue === '') {
-        setError(email, 'fuck');
+        setError(email, 'Email is required');
     } else if(!isValidEmail(emailValue)) {
-        setError(email, 'fuck you')
+        setError(email, 'Please enter a valid email')
     } else {
         setSuccess(email)
     }
