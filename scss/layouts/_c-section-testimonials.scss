@@ -18,7 +18,7 @@ section.testimonials {
     }
 
     .testimonials {
-        padding-block: f.rem(100);
+        padding-block: f.rem(100) f.rem(350);
 
         .testimonial-card {
             width: min(90%, f.rem(400));
