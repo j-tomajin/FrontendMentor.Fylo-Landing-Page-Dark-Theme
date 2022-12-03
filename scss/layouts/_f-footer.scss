@@ -3,25 +3,28 @@
 
 footer {
     margin-top: auto;
-    margin-bottom: 5px;
     padding-block: f.rem(250) f.rem(50);
     background-color: var(--d-blue-footer);
+
+    @include bp.breakpointMin(large-screen) {
+        padding-block: f.rem(180) f.rem(50);
+    }
+}
+footer .logo {
+    margin-bottom: f.rem(32);
 }
 
-footer .footer-container {
+footer .footer-container,
+footer .logo {
     width: min(90%, f.rem(1240));
     margin-inline: auto;
-
-    .logo {
-        margin-bottom: f.rem(32);
-    }
 }
 
 footer .fylo-contacts {
     margin-bottom: f.rem(64);
 
     .location {
-
+        width: min(100%, 340px);
         span {
             margin-left: f.rem(34);
         }
@@ -34,6 +37,10 @@ footer .fylo-contacts {
             color: var(--l-gray);
         }
     }
+    
+    @include bp.breakpointMin(large-screen) {
+        margin-bottom: 0;
+    }
 }
 
 footer .footer-nav {
@@ -43,6 +50,10 @@ footer .footer-nav {
             li {
                 a {
                     color: var(--l-gray);
+
+                    &:hover {
+                        color: var(--white);
+                    }
                 }
             }
         }
@@ -58,6 +69,11 @@ footer .socials {
         width: 35px;
         border-radius: 50%;
         font-size: f.rem(18);
+
+        &:hover {
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
     }
 }
 
