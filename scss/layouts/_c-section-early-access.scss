@@ -47,6 +47,14 @@ section.early-access {
             border-radius: 50px;
             color: var(--white);
             font-size: f.rem(15);
+
+            &:hover {
+                background-image:  linear-gradient(to right, var(--cyan-hover), var(--blue-hover));
+            }
         }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        padding: f.rem(38) f.rem(32);
     }
 }
