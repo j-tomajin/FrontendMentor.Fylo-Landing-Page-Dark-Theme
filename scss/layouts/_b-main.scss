@@ -55,6 +55,11 @@ main {
             h1 {
                 font-size: f.rem(38);
             }
+
+            a {
+                width: 35%;
+            }
+
             @include bp.breakpointMin(xlarge-screen) {
                 p {
                     font-size: f.rem(18);
