@@ -17,7 +17,9 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--d-blue-main-bg);
+    background-color: var(--d-blue);
+    position: relative;
+    z-index: -999;
 }
 
 input, button, textarea, select {
