@@ -4,14 +4,90 @@
 footer {
     margin-top: auto;
     margin-bottom: 5px;
+    padding-block: f.rem(250) f.rem(50);
+    background-color: var(--d-blue-footer);
 }
 
+footer .footer-container {
+    width: min(90%, f.rem(1240));
+    margin-inline: auto;
+
+    .logo {
+        margin-bottom: f.rem(32);
+    }
+}
+
+footer .fylo-contacts {
+    margin-bottom: f.rem(64);
+
+    .location {
+
+        span {
+            margin-left: f.rem(34);
+        }
+    }
+
+    .location,
+    .contact {
+        span {
+            font-size: f.rem(15);
+            color: var(--l-gray);
+        }
+    }
+}
+
+footer .footer-nav {
+    margin-bottom: f.rem(64);
+    nav {
+        ul {
+            li {
+                a {
+                    color: var(--l-gray);
+                }
+            }
+        }
+    }
+}
+
+footer .socials {
+
+    a {
+        color: var(--white);
+        border: 1px solid var(--white);
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        font-size: f.rem(18);
+    }
+}
+
+
+
 .attribution { 
-    display: none;
-    font-size: 11px; 
+    color: hsl(228, 45%, 44%); 
+    width: 100%;
+    font-size: f.rem(13); 
     text-align: center; 
 }
 
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    position: relative;
+    color: var(--white);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: 0;
+        height: 2px;
+        background-color: var(--white);
+        transition: width .3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
 }
