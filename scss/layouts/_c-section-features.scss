@@ -2,9 +2,14 @@
 @use '../utils/functions' as f;
 
 section.features {
-    width: min(100%, f.rem(1440));
+    width: 100%;
     margin-inline: auto;
     padding-block: f.rem(100);
+
+    .feature-container {
+        margin-inline: auto;
+        width: min(100%, f.rem(880));
+    }
 
     article {
         width: min(100%, f.rem(430));
