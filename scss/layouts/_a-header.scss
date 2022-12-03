@@ -2,9 +2,9 @@
 @use '../utils/functions' as f;
 
 header {
-    width: min(100%, f.rem(1440));
+    width: min(90%, f.rem(1280));
     margin-inline: auto;
-    padding: f.rem(22) f.rem(22) f.rem(50);
+    padding: f.rem(22) 5% f.rem(50);
     background-color: var(--d-blue);
 
     .logo {
@@ -15,8 +15,47 @@ header {
         ul {
             li {
                 a {
-                    color: var(--white);
+                    color: var(--l-gray);
                     font-size: f.rem(14);
+                }
+            }
+        }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        .logo {
+            width: f.rem(150);
+        }
+
+        nav {
+            ul {
+                li {
+                    a {
+                        position: relative;
+                        color: var(--l-gray);
+                        font-size: f.rem(18);
+    
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                            right: 0;
+                            margin-inline: auto;
+                            width: 0;
+                            height: 2px;
+                            background-color: var(--white);
+                            transition: width .3s ease-in-out;
+                        }
+    
+                        &:hover {
+                            color: var(--white);
+                        }
+    
+                        &:hover::after {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
