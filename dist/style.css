@@ -109,24 +109,23 @@ main {
   margin-inline: auto;
   text-align: center;
   background-color: var(--d-blue);
-  background-image: url(../images/bg-curvy-mobile.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 main .img {
   margin-bottom: 2rem;
 }
 main article {
+  /* padding-block: f.rem(32); */
   background-color: var(--d-blue-main-bg);
   width: 100%;
   color: var(--white);
 }
 main article h1 {
   font-size: 1.625rem;
+  /* transform: translateY(-50px); */
 }
 main article p {
   padding-inline: 1rem;
-  margin-top: 5rem;
+  /* margin-top: f.rem(80); */
 }
 main article a {
   color: var(--white);
@@ -174,7 +173,7 @@ section.testimonials article a {
   color: var(--cyan);
 }
 section.testimonials .testimonials {
-  padding-block: 6.25rem;
+  padding-block: 6.25rem 21.875rem;
 }
 section.testimonials .testimonials .testimonial-card {
   width: min(90%, 25rem);
@@ -332,14 +331,72 @@ section.early-access form button {
   grid-template-columns: 1fr;
 }
 
+.footer-display .footer-container .fylo-contacts {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.footer-display .footer-container .fylo-contacts .location {
+  display: flex;
+  gap: 1rem;
+}
+.footer-display .footer-container .fylo-contacts .contact {
+  display: grid;
+  gap: 1rem;
+}
+.footer-display .footer-container .fylo-contacts .contact div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-display .footer-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer-display .footer-nav nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer-display .socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.footer-display .socials a {
+  display: grid;
+  place-items: center;
+}
+
+/* REMOVE LATER */
+/* .main-display,
+.section-features-display,
+.section-testimonials-display
+.early-access-display
+ {
+    display: none;
+} */
 /* POSITIONS */
 /* MAIN */
-.main-position article {
+.main-position {
   position: relative;
 }
-.main-position article h1 {
-  top: -50px;
+.main-position .bg {
   position: absolute;
+  z-index: 0;
+  /* top: 35%; */
+}
+.main-position .bg img {
+  width: 100%;
+}
+.main-position .img {
+  z-index: 1;
+}
+.main-position article {
+  position: relative;
+  z-index: 1;
 }
 
 /* SECTION TESTIMONIALS */
@@ -353,29 +410,107 @@ section.early-access form button {
   left: 10px;
 }
 
-/* SECTION EARLY ACCESS */
-.early-access-position form .email-box {
+/* FOOTER */
+.footer-position {
+  position: relative;
+  /* SECTION EARLY ACCESS */
+}
+.footer-position .early-access-position {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.footer-position .early-access-position form .email-box {
   position: relative;
 }
-.early-access-position form .email-box .error {
+.footer-position .early-access-position form .email-box .error {
   position: absolute;
   left: 23px;
   bottom: -21px;
+}
+.footer-position .footer-container .location {
+  position: relative;
+}
+.footer-position .footer-container .location img {
+  position: absolute;
+  top: 0.3125rem;
+}
+.footer-position .attribution {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 footer {
   margin-top: auto;
   margin-bottom: 5px;
+  padding-block: 15.625rem 3.125rem;
+  background-color: var(--d-blue-footer);
+}
+
+footer .footer-container {
+  width: min(90%, 77.5rem);
+  margin-inline: auto;
+}
+footer .footer-container .logo {
+  margin-bottom: 2rem;
+}
+
+footer .fylo-contacts {
+  margin-bottom: 4rem;
+}
+footer .fylo-contacts .location span {
+  margin-left: 2.125rem;
+}
+footer .fylo-contacts .location span,
+footer .fylo-contacts .contact span {
+  font-size: 0.9375rem;
+  color: var(--l-gray);
+}
+
+footer .footer-nav {
+  margin-bottom: 4rem;
+}
+footer .footer-nav nav ul li a {
+  color: var(--l-gray);
+}
+
+footer .socials a {
+  color: var(--white);
+  border: 1px solid var(--white);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 1.125rem;
 }
 
 .attribution {
-  display: none;
-  font-size: 11px;
+  color: hsl(228deg, 45%, 44%);
+  width: 100%;
+  font-size: 0.8125rem;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228deg, 45%, 44%);
+  position: relative;
+  color: var(--white);
+}
+.attribution a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 0;
+  height: 2px;
+  background-color: var(--white);
+  transition: width 0.3s ease-in-out;
+}
+.attribution a:hover::after {
+  width: 100%;
 }
 
 .raleway {
