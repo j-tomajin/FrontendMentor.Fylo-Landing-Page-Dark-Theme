@@ -5,13 +5,25 @@
 
 /* MAIN */
 .main-position {
+    position: relative;
+
+    .bg {
+        position: absolute;
+        z-index: 0;
+        /* top: 35%; */
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .img {
+        z-index: 1;
+    }
+
     article {
         position: relative;
-
-        h1 {
-            top: -50px;
-            position: absolute;
-        }
+        z-index: 1;
     }
 }
 
@@ -31,17 +43,46 @@
     }
 }
 
-/* SECTION EARLY ACCESS */
-.early-access-position {
-    form {
-        .email-box {
-            position: relative;
+/* FOOTER */
+.footer-position {
+    position: relative;
 
-            .error {
-                position: absolute;
-                left: 23px;
-                bottom: -21px;
+    /* SECTION EARLY ACCESS */
+    .early-access-position {
+        position: absolute;
+        top: -150px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        form {
+            .email-box {
+                position: relative;
+
+                .error {
+                    position: absolute;
+                    left: 23px;
+                    bottom: -21px;
+                }
             }
         }
+    }
+
+    .footer-container {
+        .location {
+            position: relative;
+
+            img {
+                position: absolute;
+                top: f.rem(5);
+            }
+        }
+    }
+
+
+    .attribution {
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
