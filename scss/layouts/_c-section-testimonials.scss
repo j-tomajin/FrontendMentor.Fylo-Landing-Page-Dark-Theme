@@ -2,10 +2,22 @@
 @use '../utils/functions' as f;
 
 section.testimonials {
-    width: min(90%, f.rem(1000));
+    width: 100%;
     margin-inline: auto;
 
+    .testimonial-container {
+        width: 100%;
+        padding: 5%;
+        margin-inline: auto;
+
+        .flex {
+            margin-inline: auto;
+        }
+    }
+
     article {
+        width: min(100%, f.rem(550));
+
         h3 {
             color: var(--white);
         }
@@ -13,7 +25,31 @@ section.testimonials {
             color: var(--l-gray);
         }
         a {
+            width: 160px;
             color: var(--cyan);
+
+            &::after {
+                content: '';
+                margin-inline: auto;
+                width: 100%;
+                height: 1px;
+                background-color: var(--cyan);
+            }
+
+            &:hover {
+                color: var(--white);
+
+                &::after {
+                    background-color: var(--cyan);
+                }
+
+                svg {
+                    circle {
+                        fill: var(--white);
+                        
+                    }
+                }
+            }
         }
     }
 
@@ -45,6 +81,14 @@ section.testimonials {
                         font-size: f.rem(12);
                     }
                 }
+            }
+        }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        article {
+            h3 {
+                font-size: f.rem(48);
             }
         }
     }
