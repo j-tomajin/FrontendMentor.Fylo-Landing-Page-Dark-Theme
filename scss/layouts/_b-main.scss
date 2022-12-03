@@ -2,31 +2,36 @@
 @use '../utils/functions' as f;
 
 main {
-    width: min(100%, f.rem(1440));
+    width: 100%;
     margin-inline: auto;
     text-align: center;
     background-color: var(--d-blue);
-    
 
+    .img,
+    .article-container {
+        width: min(100%, f.rem(720));
+    }
 
     .img {
         margin-bottom: f.rem(32);
     }
 
     article {
-        /* padding-block: f.rem(32); */
+        padding-block: f.rem(50) f.rem(32);
         background-color: var(--d-blue-main-bg);
-        width: 100%;
         color: var(--white);
+        width: 100%;
+
+        .article-container {
+            margin-inline: auto;
+        }
 
         h1 {
             font-size: f.rem(26);
-            /* transform: translateY(-50px); */
         }
 
         p {
             padding-inline: f.rem(16);
-            /* margin-top: f.rem(80); */
         }
 
         a {
@@ -36,6 +41,26 @@ main {
             margin-inline: auto;
             padding: f.rem(16);
             border-radius: 50px;
+        }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        background-image: url(../images/bg-curvy-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+
+        article {
+            h1 {
+                font-size: f.rem(38);
+            }
+            @include bp.breakpointMin(xlarge-screen) {
+                p {
+                    font-size: f.rem(18);
+                    padding-inline: f.rem(88);
+                }
+            }
         }
     }
 }
