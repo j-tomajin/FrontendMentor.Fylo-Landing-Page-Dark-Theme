@@ -8,6 +8,8 @@
   --cyan: hsl(176, 68%, 64%);
   --blue: hsl(198, 60%, 50%);
   --l-red: hsl(0, 100%, 63%);
+  --cyan-hover: hsl(176, 96%, 72%);
+  --blue-hover: hsl(198, 98%, 62%);
   --button-color: linear-gradient(to right, --cyan, --blue);
   /* Neutral */
   --white: hsl(0, 0%, 100%);
@@ -33,7 +35,9 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--d-blue-main-bg);
+  background-color: var(--d-blue);
+  position: relative;
+  z-index: -999;
 }
 
 input, button, textarea, select {
@@ -91,41 +95,74 @@ a, a:focus, a:visited {
 }
 
 header {
-  width: min(100%, 90rem);
+  width: min(90%, 80rem);
   margin-inline: auto;
-  padding: 1.375rem 1.375rem 3.125rem;
+  padding: 1.375rem 5% 3.125rem;
   background-color: var(--d-blue);
 }
 header .logo {
   width: 4.625rem;
 }
 header nav ul li a {
-  color: var(--white);
+  color: var(--l-gray);
   font-size: 0.875rem;
+}
+@media (min-width: 57.5em) {
+  header .logo {
+    width: 9.375rem;
+  }
+  header nav ul li a {
+    position: relative;
+    color: var(--l-gray);
+    font-size: 1.125rem;
+  }
+  header nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease-in-out;
+  }
+  header nav ul li a:hover {
+    color: var(--white);
+  }
+  header nav ul li a:hover::after {
+    width: 100%;
+  }
 }
 
 main {
-  width: min(100%, 90rem);
+  width: 100%;
   margin-inline: auto;
   text-align: center;
   background-color: var(--d-blue);
+}
+main .img,
+main .article-container {
+  width: min(100%, 45rem);
 }
 main .img {
   margin-bottom: 2rem;
 }
 main article {
-  /* padding-block: f.rem(32); */
+  padding-block: 3.125rem 2rem;
   background-color: var(--d-blue-main-bg);
-  width: 100%;
   color: var(--white);
+  width: 100%;
+}
+main article .article-container {
+  margin-inline: auto;
 }
 main article h1 {
   font-size: 1.625rem;
-  /* transform: translateY(-50px); */
 }
 main article p {
   padding-inline: 1rem;
-  /* margin-top: f.rem(80); */
 }
 main article a {
   color: var(--white);
@@ -135,11 +172,32 @@ main article a {
   padding: 1rem;
   border-radius: 50px;
 }
+@media (min-width: 57.5em) {
+  main {
+    background-image: url(../images/bg-curvy-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  main article h1 {
+    font-size: 2.375rem;
+  }
+}
+@media (min-width: 57.5em) and (min-width: 90em) {
+  main article p {
+    font-size: 1.125rem;
+    padding-inline: 5.5rem;
+  }
+}
 
 section.features {
-  width: min(100%, 90rem);
+  width: 100%;
   margin-inline: auto;
   padding-block: 6.25rem;
+}
+section.features .feature-container {
+  margin-inline: auto;
+  width: min(100%, 55rem);
 }
 section.features article {
   width: min(100%, 26.875rem);
@@ -160,8 +218,19 @@ section.features article p {
 }
 
 section.testimonials {
-  width: min(90%, 62.5rem);
+  width: 100%;
   margin-inline: auto;
+}
+section.testimonials .testimonial-container {
+  width: 100%;
+  padding: 5%;
+  margin-inline: auto;
+}
+section.testimonials .testimonial-container .flex {
+  margin-inline: auto;
+}
+section.testimonials article {
+  width: min(100%, 34.375rem);
 }
 section.testimonials article h3 {
   color: var(--white);
@@ -170,7 +239,24 @@ section.testimonials article p {
   color: var(--l-gray);
 }
 section.testimonials article a {
+  width: 160px;
   color: var(--cyan);
+}
+section.testimonials article a::after {
+  content: "";
+  margin-inline: auto;
+  width: 100%;
+  height: 1px;
+  background-color: var(--cyan);
+}
+section.testimonials article a:hover {
+  color: var(--white);
+}
+section.testimonials article a:hover::after {
+  background-color: var(--cyan);
+}
+section.testimonials article a:hover svg circle {
+  fill: var(--white);
 }
 section.testimonials .testimonials {
   padding-block: 6.25rem 21.875rem;
@@ -194,6 +280,11 @@ section.testimonials .testimonials .testimonial-card .user .user-info h4 {
 section.testimonials .testimonials .testimonial-card .user .user-info p {
   color: var(--l-gray);
   font-size: 0.75rem;
+}
+@media (min-width: 57.5em) {
+  section.testimonials article h3 {
+    font-size: 3rem;
+  }
 }
 
 section.early-access {
@@ -243,7 +334,16 @@ section.early-access form button {
   color: var(--white);
   font-size: 0.9375rem;
 }
+section.early-access form button:hover {
+  background-image: linear-gradient(to right, var(--cyan-hover), var(--blue-hover));
+}
+@media (min-width: 57.5em) {
+  section.early-access {
+    padding: 2.375rem 2rem;
+  }
+}
 
+/* DISPLAY */
 /* HEADER */
 .header-display {
   display: flex;
@@ -267,26 +367,37 @@ section.early-access form button {
   justify-content: center;
   gap: 2.75rem;
 }
-.main-display article {
+.main-display article .article-container {
   display: grid;
   gap: 1.75rem;
 }
 
 /* SECTION FEATURES DISPLAY */
-.section-features-display {
+.section-features-display .feature-container {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr;
   gap: 4rem;
 }
+@media (min-width: 57.5em) {
+  .section-features-display .feature-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* SECTION TESTIMONIALS */
 .section-testimonials-display {
+  /* GRID AREAS */
+}
+.section-testimonials-display .testimonial-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  grid-template-areas: "img" "article" "testimonials";
-  /* GRID AREAS */
+  grid-template-areas: "flex" "flex" "testimonials";
+}
+.section-testimonials-display .testimonial-container .flex {
+  display: flex;
+  flex-direction: column;
 }
 .section-testimonials-display article {
   display: flex;
@@ -314,11 +425,22 @@ section.early-access form button {
   align-items: center;
   gap: 1rem;
 }
-.section-testimonials-display .img {
-  grid-area: img;
+@media (min-width: 57.5em) {
+  .section-testimonials-display .testimonial-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "flex flex" "testimonials testimonials";
+  }
+  .section-testimonials-display .testimonial-container .flex {
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .section-testimonials-display .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-.section-testimonials-display article {
-  grid-area: article;
+.section-testimonials-display .flex {
+  grid-area: flex;
 }
 .section-testimonials-display .testimonials {
   grid-area: testimonials;
@@ -330,7 +452,17 @@ section.early-access form button {
   gap: 1.875rem;
   grid-template-columns: 1fr;
 }
+@media (min-width: 57.5em) {
+  .early-access-display form {
+    grid-template-columns: 65% 33%;
+    gap: 1rem;
+  }
+}
 
+.footer-display .footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .footer-display .footer-container .fylo-contacts {
   display: flex;
   gap: 1rem;
@@ -341,7 +473,8 @@ section.early-access form button {
   gap: 1rem;
 }
 .footer-display .footer-container .fylo-contacts .contact {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 .footer-display .footer-container .fylo-contacts .contact div {
@@ -369,11 +502,31 @@ section.early-access form button {
   display: grid;
   place-items: center;
 }
+@media (min-width: 90em) {
+  .footer-display .footer-container {
+    grid-template-columns: 50% 35% 15%;
+  }
+  .footer-display .footer-container .fylo-contacts {
+    flex-direction: row;
+    align-items: unset;
+    gap: 2rem;
+  }
+  .footer-display .footer-container .fylo-contacts .contact {
+    align-items: unset;
+  }
+  .footer-display .footer-nav nav {
+    flex-direction: row;
+    gap: 6.25rem;
+  }
+  .footer-display .socials {
+    align-items: unset;
+  }
+}
 
 /* REMOVE LATER */
 /* .main-display,
 .section-features-display,
-.section-testimonials-display
+.section-testimonials-display,
 .early-access-display
  {
     display: none;
@@ -382,14 +535,6 @@ section.early-access form button {
 /* MAIN */
 .main-position {
   position: relative;
-}
-.main-position .bg {
-  position: absolute;
-  z-index: 0;
-  /* top: 35%; */
-}
-.main-position .bg img {
-  width: 100%;
 }
 .main-position .img {
   z-index: 1;
@@ -400,14 +545,34 @@ section.early-access form button {
 }
 
 /* SECTION TESTIMONIALS */
+.section-testimonials-position {
+  position: relative;
+  z-index: -10;
+}
+.section-testimonials-position article a {
+  position: relative;
+}
+.section-testimonials-position article a::after {
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  left: 0;
+}
 .section-testimonials-position .testimonials .testimonial-card:first-child {
   position: relative;
 }
 .section-testimonials-position .testimonials .testimonial-card:first-child > img {
   width: 50px;
   position: absolute;
-  top: -41px;
+  top: -40px;
   left: 10px;
+}
+@media (min-width: 57.5em) {
+  .section-testimonials-position .testimonials .testimonial-card:first-child > img {
+    top: -30px;
+    left: -10px;
+    z-index: -1;
+  }
 }
 
 /* FOOTER */
@@ -445,21 +610,30 @@ section.early-access form button {
 
 footer {
   margin-top: auto;
-  margin-bottom: 5px;
   padding-block: 15.625rem 3.125rem;
   background-color: var(--d-blue-footer);
 }
+@media (min-width: 57.5em) {
+  footer {
+    padding-block: 11.25rem 3.125rem;
+  }
+}
 
-footer .footer-container {
+footer .logo {
+  margin-bottom: 2rem;
+}
+
+footer .footer-container,
+footer .logo {
   width: min(90%, 77.5rem);
   margin-inline: auto;
-}
-footer .footer-container .logo {
-  margin-bottom: 2rem;
 }
 
 footer .fylo-contacts {
   margin-bottom: 4rem;
+}
+footer .fylo-contacts .location {
+  width: min(100%, 340px);
 }
 footer .fylo-contacts .location span {
   margin-left: 2.125rem;
@@ -469,12 +643,20 @@ footer .fylo-contacts .contact span {
   font-size: 0.9375rem;
   color: var(--l-gray);
 }
+@media (min-width: 57.5em) {
+  footer .fylo-contacts {
+    margin-bottom: 0;
+  }
+}
 
 footer .footer-nav {
   margin-bottom: 4rem;
 }
 footer .footer-nav nav ul li a {
   color: var(--l-gray);
+}
+footer .footer-nav nav ul li a:hover {
+  color: var(--white);
 }
 
 footer .socials a {
@@ -484,6 +666,10 @@ footer .socials a {
   width: 35px;
   border-radius: 50%;
   font-size: 1.125rem;
+}
+footer .socials a:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
 }
 
 .attribution {
@@ -532,4 +718,8 @@ p, .open-sans {
 .open-sans-bold {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
+}
+
+section {
+  background-color: var(--d-blue-main-bg);
 }/*# sourceMappingURL=style.css.map */
