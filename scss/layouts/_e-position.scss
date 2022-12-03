@@ -7,16 +7,6 @@
 .main-position {
     position: relative;
 
-    .bg {
-        position: absolute;
-        z-index: 0;
-        /* top: 35%; */
-
-        img {
-            width: 100%;
-        }
-    }
-
     .img {
         z-index: 1;
     }
@@ -29,15 +19,43 @@
 
 /* SECTION TESTIMONIALS */
 .section-testimonials-position {
+    position: relative;
+    z-index: -10;
+
+    article {
+        a {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                bottom: -7px;
+                right: 0;
+                left: 0;
+            }
+        }
+    }
+
     .testimonials {
+
         .testimonial-card:first-child {
             position: relative;
 
             & > img {
                 width: 50px;
                 position: absolute;
-                top: -41px;
+                top: -40px;
                 left: 10px;
+            }
+        }
+
+        @include bp.breakpointMin(large-screen) {
+            .testimonial-card:first-child {
+
+                & > img {
+                    top: -30px;
+                    left: -10px;
+                    z-index: -1;
+                }
             }
         }
     }
